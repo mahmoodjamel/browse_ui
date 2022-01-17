@@ -3,6 +3,7 @@ import 'package:browse_ui/widget/hand_widget.dart';
 import 'package:browse_ui/widget/im_widget.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:flutter_localizations/flutter_localizations.dart';
 //
 // import '../app_localization.dart';
@@ -19,31 +20,20 @@ Navigator.of(ctx).push(MaterialPageRoute(builder: (_)
   }
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ScreenUtilInit(
+        designSize: Size(411, 820),
+    minTextAdapt: true,
+    builder: () =>  MaterialApp(
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      // localizationsDelegates:const [
-      //   AppLocalization.delegate,
-      //   GlobalMaterialLocalizations.delegate,
-      //   GlobalMaterialLocalizations.delegate,
-      // ],
-      // supportedLocales: [Locale('en','US'),
-      // Locale('ar','EG')],
-      // localeResolutionCallback: (locale,suppprtedLocales){
-      //   for(var suppprtedLocales in suppprtedLocales){
-      //     if(suppprtedLocales.languageCode == locale!.languageCode && suppprtedLocales.countryCode == locale.countryCode){
-      //       return suppprtedLocales;
-      //     }
-      //   }
-      //   return suppprtedLocales.first;
-      // },
+
 
       home: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: NetworkImage(
+                image: const NetworkImage(
                     'https://i.pinimg.com/originals/b1/58/cd/b158cd75f7f6cacc2beefc40b523c965.jpg'),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
@@ -58,8 +48,8 @@ Navigator.of(ctx).push(MaterialPageRoute(builder: (_)
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                            margin: EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 50),
+                            margin:  EdgeInsets.symmetric(
+                                horizontal: 20.w, vertical: 50.h),
                             child: Icon(
                               Icons.format_align_center,
                               size: 40,
@@ -67,32 +57,32 @@ Navigator.of(ctx).push(MaterialPageRoute(builder: (_)
                             )),
                       ],
                     ),
-                    SizedBox(
-                      height: 40,
+                     SizedBox(
+                      height: 40.h,
                     ),
                     Text(
                       'mainTitle'.tr(),
-                      style: TextStyle(
+                      style:  TextStyle(
                           fontSize: 40,
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(
-                      height: 10,
+                     SizedBox(
+                      height: 10.h,
                     ),
                     Text(
                       'supTitle'.tr(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.white,
                           fontSize: 15,
                           fontWeight: FontWeight.w300),
                     ),
-                    SizedBox(
-                      height: 20,
+                     SizedBox(
+                      height: 20.h,
                     ),
                     Container(
-                      width: 350,
+                      width: 350.w,
                       child: TextField(
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.all(20.0),
@@ -101,17 +91,17 @@ Navigator.of(ctx).push(MaterialPageRoute(builder: (_)
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(50),
                             borderSide:
-                                BorderSide(width: 100, color: Colors.white),
+                                BorderSide(width: 100.w, color: Colors.white),
                           ),
                           hintText: 'hint'.tr(),
-                          hintStyle: TextStyle(
+                          hintStyle: const TextStyle(
                             color: Colors.white,
                             fontSize: 15,
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 50,
                     ),
                     Container(
@@ -129,22 +119,26 @@ Navigator.of(ctx).push(MaterialPageRoute(builder: (_)
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 50,
+                     SizedBox(
+                      height: 50.h,
                     ),
-                    Divider(
+                    const Divider(
                         color: Colors.grey,
                         thickness: 8,
                         indent: 170,
                         endIndent: 170),
-                    SizedBox(
-                      height: 10,
+                     SizedBox(
+                      height: 10.h,
                     ),
                     SingleChildScrollView(
                       child: Container(
-                        color: Colors.white,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: Colors.white,
+
+                        ),
                         width: double.infinity,
-                        height: 247,
+                        height: 247.h,
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
@@ -152,10 +146,10 @@ Navigator.of(ctx).push(MaterialPageRoute(builder: (_)
                                   padding: EdgeInsets.symmetric(vertical: 20),
                                   child: Text(
                                     'hand'.tr(),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color: Colors.black, fontSize: 20),
                                   )),
-                              Divider(
+                              const Divider(
                                   color: Colors.orange,
                                   thickness: 5,
                                   indent: 180,
@@ -188,6 +182,7 @@ Navigator.of(ctx).push(MaterialPageRoute(builder: (_)
             )
         ),
       ),
+    ),
     );
   }
 }

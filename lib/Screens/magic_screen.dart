@@ -3,6 +3,7 @@ import 'package:browse_ui/widget/im_widget.dart';
 import 'package:browse_ui/widget/mi_widget.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'hand_screen.dart';
 
@@ -22,8 +23,8 @@ class MagicScreen extends StatelessWidget {
                       child: Image.network(
                     image,
                     fit: BoxFit.cover,
-                    width: 395,
-                    height: 350,
+                    width: double.infinity.w,
+                    height: 350.h,
                   )),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
@@ -43,16 +44,14 @@ class MagicScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 0,
-              ),
+
               Container(
                 width: double.infinity,
-                height: 475,
+                height: 475.h,
                 color: Colors.white,
                 child: Column(
                   children: [
-                    SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     Row(
                       children: [
                         Container(
@@ -85,7 +84,7 @@ class MagicScreen extends StatelessWidget {
                             ))
                       ],
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 30.h),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Text('summry'.tr(),
@@ -122,9 +121,7 @@ class MagicScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: 0,
-                    ),
+
                     Container(
                       child: SingleChildScrollView(
                         child: Column(
