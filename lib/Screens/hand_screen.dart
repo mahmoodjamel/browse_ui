@@ -19,7 +19,8 @@ class HandScreen extends StatelessWidget {
                   'https://i.pinimg.com/originals/b1/58/cd/b158cd75f7f6cacc2beefc40b523c965.jpg'),
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
-                  Colors.green.withOpacity(0.6), BlendMode.darken))),
+                  Colors.green.withOpacity(0.6), BlendMode.darken))
+      ),
       child: Scaffold(
         drawerScrimColor: Colors.grey.withOpacity(0.8),
         backgroundColor: Colors.transparent,

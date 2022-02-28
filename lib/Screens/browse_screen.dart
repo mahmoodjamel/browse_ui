@@ -133,7 +133,8 @@ Navigator.of(ctx).push(MaterialPageRoute(builder: (_)
                     SingleChildScrollView(
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
+                          borderRadius: BorderRadius.only(
+                          ),
                           color: Colors.white,
 
                         ),
